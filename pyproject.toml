@@ -1,0 +1,12 @@
+[project]
+name = "dbt-robust-testing"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "dbt-core>=1.9.3",
+    "dbt-duckdb>=1.9.2",
+    "duckdb>=1.2.1",
+    "pandas>=2.2.3",
+]

@@ -1,0 +1,6 @@
+dbt_robust_testing:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: 'init-db.duckdb'

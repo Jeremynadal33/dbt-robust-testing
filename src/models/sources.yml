@@ -1,0 +1,7 @@
+sources:
+  - name: raw_data
+    schema: raw_data
+    tables:
+      - name: orders
+      - name: restaurants
+      - name: dishes

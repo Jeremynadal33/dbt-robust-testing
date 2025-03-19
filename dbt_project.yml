@@ -1,0 +1,16 @@
+name: 'dbt_robust_testing'
+version: '1.0.0'
+
+profile: 'dbt_robust_testing'
+
+model-paths: ["src/models"]
+seed-paths: ["src/seeds"]
+macro-paths: ["src/macros"]
+
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+models:
+  dbt_robust_testing:
+    materialized: table
