@@ -3,5 +3,11 @@ sources:
     schema: raw_data
     tables:
       - name: orders
+        columns:
+          - name: identifier
+            data_tests:
+              - unique:
+                  config:
+                    severity: warn
       - name: restaurants
       - name: dishes

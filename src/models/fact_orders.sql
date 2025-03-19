@@ -1,5 +1,5 @@
 with orders as (
-    select * from {{ source('raw_data', 'orders') }}
+    select distinct * from {{ source('raw_data', 'orders') }}
 )
 
 , filtered as (
@@ -15,5 +15,5 @@ with orders as (
     where
         regexp_matches(status, '^[Ss]uccess$')
 )
-select * from filtered
 
+select * from filtered

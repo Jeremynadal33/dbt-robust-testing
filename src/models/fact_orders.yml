@@ -1,0 +1,15 @@
+models:
+    - name: fact_orders
+      description: >
+        This table records all succeded orders placed by customers.
+      columns:
+        - name: identifier
+          description: >
+            Unique identifier of the order.
+          tests:
+            - unique
+        - name: amount
+          description: >
+            Total amount of the order.
+          tests:
+            - is_positive
