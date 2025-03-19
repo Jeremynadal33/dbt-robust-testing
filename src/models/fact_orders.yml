@@ -13,3 +13,23 @@ models:
             Total amount of the order.
           tests:
             - is_positive
+
+unit_tests:
+  - name: test_fact_orders_regexp
+    model: fact_orders
+    given:
+      - input: source('raw_data', 'orders')
+        rows:
+          - {identifier: '1', status: pending}
+          - {identifier: '1', status: success}
+          - {identifier: '1', status: success}
+          - {identifier: '2', status: succesS}
+          - {identifier: '3', status: 'success '}
+          - {identifier: '4', status: 'SucCess'}
+          - {identifier: '5', status: 'SUCESS'}
+    expect:
+      rows:
+        - {identifier: '1'}
+        - {identifier: '2'}
+        - {identifier: '3'}
+        - {identifier: '4'}

@@ -13,7 +13,7 @@ with orders as (
     from
         orders
     where
-        regexp_matches(status, '^[Ss]uccess$')
+        regexp_matches(trim(status), '^(?i)success$')
 )
 
 select * from filtered
