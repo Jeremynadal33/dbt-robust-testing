@@ -1,0 +1,3 @@
+identifier,name,selling_price,production_cost,type
+1,Pinte de Biere,"{""price"": 6,""hh_price"": 5}",2,boisson
+2,Demi peche,"{""price"":4}",1,boisson

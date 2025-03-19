@@ -1,0 +1,3 @@
+identifier,name,address,nb_employees,open_on_sunday,hh_start,hh_end
+1,Chez toto,Paris,1,true,,
+2,Chez nachereiner,Bordeaux,1,true,0,23

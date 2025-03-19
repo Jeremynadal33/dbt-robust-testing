@@ -18,7 +18,7 @@ unit_tests:
   - name: test_fact_orders_regexp
     model: fact_orders
     given:
-      - input: source('raw_data', 'orders')
+      - input: ref('sample_orders')
         rows:
           - {identifier: '1', status: pending}
           - {identifier: '1', status: success}

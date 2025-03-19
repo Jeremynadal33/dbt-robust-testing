@@ -1,0 +1,5 @@
+dish_id,dish_name,hour,orders_count,total_selling_price
+1,"Pinte de Biere","2025-01-01T00:00:00",2,12
+2,"Demi peche","2025-01-01T00:00:00",1,4
+2,"Demi peche","2025-01-01T01:00:00",1,4
+1,"Pinte de Biere","2025-01-01T01:00:00",1,5

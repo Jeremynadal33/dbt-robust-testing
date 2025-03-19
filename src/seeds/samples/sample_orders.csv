@@ -1,0 +1,5 @@
+identifier,restaurant_identifier,dishes_ids,payment_method,amount,created_at,status
+1,1,"[1]",cash,6,2025-01-01 00:00:01,success
+1,1,"[1]",cash,6,2025-01-01 00:00:01,success
+2,1,"[1, 2]",card,10,2025-01-01 00:00:01,Success 
+3,2,"[1, 2]",card,9,2025-01-01 01:00:01,SUCCESS 

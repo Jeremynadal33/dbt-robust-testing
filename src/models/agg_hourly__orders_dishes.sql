@@ -8,11 +8,11 @@ with orders as (
         , name
         , selling_price::json as selling_price
     from
-        {{ source('raw_data', 'dishes') }}
+        {{ mockable_source('raw_data', 'dishes') }}
 )
 
 , restaurants as (
-    select * from {{ source('raw_data', 'restaurants') }}
+    select * from {{ mockable_source('raw_data', 'restaurants') }}
 )
 
 , orders_flattened as (
@@ -33,6 +33,7 @@ with orders as (
         , count(1) as orders_count
         , sum(
             case
+                when d.selling_price.hh_price is null then d.selling_price.price::double
                 when hour(of.created_at) between r.hh_start and r.hh_end
                     then d.selling_price.hh_price::double
                 else

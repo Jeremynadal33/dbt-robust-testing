@@ -1,5 +1,5 @@
 with orders as (
-    select distinct * from {{ source('raw_data', 'orders') }}
+    select distinct * from {{ mockable_source('raw_data', 'orders') }}
 )
 
 , filtered as (

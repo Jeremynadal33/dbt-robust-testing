@@ -16,3 +16,6 @@ clean-targets:
 models:
   dbt_robust_testing:
     materialized: table
+
+vars:
+  test_from_sample: true

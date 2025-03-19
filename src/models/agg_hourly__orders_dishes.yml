@@ -1,0 +1,7 @@
+models:
+  - name: agg_hourly__orders_dishes
+    description: >
+      This table records the total amount of orders placed per dish per hour.
+    tests:
+      - dbt_utils.equality:
+          compare_model: ref('expect_agg_hourly__orders_dishes')
