@@ -1,6 +1,9 @@
 # dbt-robust-testing
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> c840253 (upd README.md with scenarios)
 You are a Data Engineer arriving on an existing project with many problems. 
 
 ### Set up 
@@ -59,9 +62,13 @@ If you did not have time to finish, you can use the correction to begin next sce
 ```bash
 git switch integration_tests
 ```
+<<<<<<< HEAD
 </details>
 
 
 ---
 
 [To the slides](https://docs.google.com/presentation/d/1mVhp0eVPjkX9xXjH5fJsOszCoNDmX9E9Jrj-f9hWGmg/edit?usp=sharing)
+=======
+</details>
+>>>>>>> c840253 (upd README.md with scenarios)
