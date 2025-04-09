@@ -5,3 +5,4 @@ logs/
 .venv
 .user.yml
 .vscode/
+**/*/dbt_robust_testing.egg-info/*
