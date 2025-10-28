@@ -1,0 +1,9 @@
+models:
+  - name: example
+    description: An example model demonstrating YAML structure.
+    columns:
+      - name: id
+        type: integer
+        description: Unique identifier for the example.
+        data_tests:
+          - not_null

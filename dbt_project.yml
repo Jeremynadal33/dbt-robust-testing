@@ -3,6 +3,7 @@ version: '1.0.0'
 
 profile: 'dbt_robust_testing'
 
+analysis-paths: ["src/analyses"]
 model-paths: ["src/models"]
 seed-paths: ["src/seeds"]
 macro-paths: ["src/macros"]
