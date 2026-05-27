@@ -1,0 +1,67 @@
+# Demo navigation: `mise run <N>` stashes pending changes then switches
+# to the matching branch. Use it to walk through demo steps quickly.
+
+[tasks._switch]
+hide = true
+usage = 'arg "<branch>"'
+run = '''
+git stash
+git switch "$usage_branch"
+dbt run
+'''
+
+[tasks."0"]
+description = "Switch -> base (starting point)"
+run = "mise run _switch base"
+
+[tasks."1"]
+description = "Switch -> data_tests_analysis (scenario 1 - hint)"
+run = "mise run _switch data_tests_analysis"
+
+[tasks."2"]
+description = "Switch -> data_tests (scenario 1 - solution)"
+run = "mise run _switch data_tests"
+
+[tasks."3"]
+description = "Switch -> unit_tests_analysis (scenario 2 - hint)"
+run = "mise run _switch unit_tests_analysis"
+
+[tasks."4"]
+description = "Switch -> unit_tests (scenario 2 - solution)"
+run = "mise run _switch unit_tests"
+
+[tasks."5"]
+description = "Switch -> integration_tests_analysis (scenario 3 - hint)"
+run = "mise run _switch integration_tests_analysis"
+
+[tasks."6"]
+description = "Switch -> integration_tests (scenario 3 - solution)"
+run = """
+mise run _switch integration_tests
+dbt deps
+"""
+
+[tasks."7"]
+description = "Switch -> elementary (bonus)"
+run = "mise run _switch elementary"
+
+[tasks."restack"]
+description = "Rebase each branch of the stack onto its predecessor, then push --force-with-lease"
+run = """
+set -e
+current=$(git branch --show-current)
+
+git rebase base data_tests_analysis
+git rebase data_tests_analysis data_tests
+git rebase data_tests unit_tests_analysis
+git rebase unit_tests_analysis unit_tests
+git rebase unit_tests integration_tests_analysis
+git rebase integration_tests_analysis integration_tests
+
+git push --force-with-lease origin \
+  data_tests_analysis data_tests \
+  unit_tests_analysis unit_tests \
+  integration_tests_analysis integration_tests
+
+git switch "$current"
+"""
