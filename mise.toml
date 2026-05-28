@@ -3,10 +3,16 @@
 
 [tasks._switch]
 hide = true
-usage = 'arg "<branch>"'
+usage = '''
+arg "<branch>"
+flag "--deps" help="Run dbt deps before dbt run"
+'''
 run = '''
 git stash
 git switch "$usage_branch"
+if [ "$usage_deps" = "true" ]; then
+  dbt deps && dbt seed
+fi
 dbt run
 '''
 
@@ -36,10 +42,7 @@ run = "mise run _switch integration_tests_analysis"
 
 [tasks."6"]
 description = "Switch -> integration_tests (scenario 3 - solution)"
-run = """
-mise run _switch integration_tests
-dbt deps
-"""
+run = "mise run _switch integration_tests --deps"
 
 [tasks."7"]
 description = "Switch -> elementary (bonus)"
